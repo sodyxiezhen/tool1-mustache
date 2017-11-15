@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mustache模板引擎</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/mustache.min.js"></script>
+<script id="tmp1" type="text/x-mustache-template">
+	你好，{{name}}
+</script>
+<script id="tmp2" type="text/x-mustache-template">
+	{{#bool}}
+	输入的是正
+	{{/bool}}
+	{{^bool}}
+	输入的是负
+	{{/bool}}
+</script>
+<script id="tmp3" type="text/x-mustache-template">
+	{{#names}}
+	{{.}}
+	{{/names}}
+</script>
+<script id="tmp4" type="text/x-mustache-template">
+	{{#stu}}
+	name == {{name}}
+	age == {{age}}
+	addr == {{addr}}
+	{{/stu}}
+</script>
+<script type="text/javascript">
+	var obj = [];
+	//变量
+	var template = $.trim($('#tmp1').html());
+	var content = Mustache.render(template,{name:'sody'});
+	obj.push(content);
+
+	//分支结构
+	var template2 = $.trim($('#tmp2').html());
+	var content2 = Mustache.render(template2,{bool:false});
+	obj.push(content2);
+
+	//遍历list
+	var template3 = $.trim($('#tmp3').html());
+	var content3 = Mustache.render(template3,{names:['xuexue', 'sody']});
+	obj.push(content3);
+
+	//遍历map
+	var template4 = $.trim($('#tmp4').html());
+	var content4 = Mustache.render(template4,{stu:{'name':'xuexue','age':18,'addr':'深圳'}});
+	obj.push(content4);
+
+	for(var content of obj) {
+		document.writeln(content+'<br />');
+	}
+
+</script>
+</html>
