@@ -81,3 +81,11 @@ map结构
 	var template4 = $.trim($('#tmp4').html());
 	var content4 = Mustache.render(template4,{stu:{'name':'xuexue','age':18,'addr':'深圳'}});
 ```
+
+#### 下一期预告
+* axios http client
+* promise 异步嵌套
+* gulp
+* vue SPA
+* webpack
+* canvas
