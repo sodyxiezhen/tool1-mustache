@@ -31,52 +31,53 @@
 [网上简易教程一篇~~](http://web.jobbole.com/84906/)
     
 #### 懒人往下看
-    元素赋值
-    ```
-    <script id="tmp1" type="text/x-mustache-template">
-	你好，{{name}}
-	</script>
-    //变量
-	var template = $.trim($('#tmp1').html());
-	var content = Mustache.render(template,{name:'sody'});
-    `
-    bool值
-    `
-    <script id="tmp2" type="text/x-mustache-template">
-    	{{#bool}}
-    	输入的是正
-    	{{/bool}}
-    	{{^bool}}
-    	输入的是负
-    	{{/bool}}
-    </script>
-    //分支结构
-    	var template2 = $.trim($('#tmp2').html());
-    	var content2 = Mustache.render(template2,{bool:false});
-    ```
-    
-    list结构
-    ```
-    <script id="tmp3" type="text/x-mustache-template">
-    	{{#names}}
-    	{{.}}
-    	{{/names}}
-    </script>
-    //遍历list
-    	var template3 = $.trim($('#tmp3').html());
-    	var content3 = Mustache.render(template3,{names:['xuexue', 'sody']});
-    ```
-    
-    map结构
-    ```
-    <script id="tmp4" type="text/x-mustache-template">
-    	{{#stu}}
-    	name == {{name}}
-    	age == {{age}}
-    	addr == {{addr}}
-    	{{/stu}}
-    </script>
-    //遍历map
-    	var template4 = $.trim($('#tmp4').html());
-    	var content4 = Mustache.render(template4,{stu:{'name':'xuexue','age':18,'addr':'深圳'}});
-    ```
+元素赋值
+```
+<script id="tmp1" type="text/x-mustache-template">
+你好，{{name}}
+</script>
+//变量
+var template = $.trim($('#tmp1').html());
+var content = Mustache.render(template,{name:'sody'});
+```
+
+bool值
+```
+<script id="tmp2" type="text/x-mustache-template">
+	{{#bool}}
+	输入的是正
+	{{/bool}}
+	{{^bool}}
+	输入的是负
+	{{/bool}}
+</script>
+//分支结构
+	var template2 = $.trim($('#tmp2').html());
+	var content2 = Mustache.render(template2,{bool:false});
+```
+
+list结构
+```
+<script id="tmp3" type="text/x-mustache-template">
+	{{#names}}
+	{{.}}
+	{{/names}}
+</script>
+//遍历list
+	var template3 = $.trim($('#tmp3').html());
+	var content3 = Mustache.render(template3,{names:['xuexue', 'sody']});
+```
+
+map结构
+```
+<script id="tmp4" type="text/x-mustache-template">
+	{{#stu}}
+	name == {{name}}
+	age == {{age}}
+	addr == {{addr}}
+	{{/stu}}
+</script>
+//遍历map
+	var template4 = $.trim($('#tmp4').html());
+	var content4 = Mustache.render(template4,{stu:{'name':'xuexue','age':18,'addr':'深圳'}});
+```
