@@ -3,28 +3,29 @@
     template.replace(reg,data) 核心原理是正则替换
     
 #### mustcache 核心API
-    ·
+    `
         Muscache.render(template,object);
         template 是 模板内容
         object 是 需要放入的数据
-    ·
+    `
     
 #### 最佳实践
-    `
-        模板单独放置
-        <script id="tmp1" type="text/x-mustache-template">
-        	你好，{{name}}
-        </script>
-        <script>
-            var template = $.trim($('#tmp1').html());
-            var content = Mustache.render(template,{name:'sody'});
-        </script>
-    `
-    > script标签给一个浏览器不认识的type,浏览器就不会解析，不会执行
+`
+    模板单独放置
+    <script id="tmp1" type="text/x-mustache-template">
+    	你好，{{name}}
+    </script>
+    <script>
+        var template = $.trim($('#tmp1').html());
+        var content = Mustache.render(template,{name:'sody'});
+    </script>
+`
+
+> script标签给一个浏览器不认识的type,浏览器就不会解析，不会执行
     
 #### 文档链接
-    [mustache官方git 仓库](https://github.com/janl/mustache.js)
-    [网上简易教程一篇~~](http://web.jobbole.com/84906/)
+[mustache官方git 仓库](https://github.com/janl/mustache.js)
+[网上简易教程一篇~~](http://web.jobbole.com/84906/)
     
 #### 懒人往下看
     元素赋值
